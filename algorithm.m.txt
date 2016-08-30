@@ -1,0 +1,312 @@
+xe1=[0,0,5,-2,-3,-5,1,2,4,3]
+xe2=[1,1,1,1,2,2,1,1,0,0]
+xe3=[0,0,0,0,0,0,0,0,1,3]
+xe4=[2,2,1,1,4,4,-5,-3,2,0]
+xe5=[1,1,1,1,1,1,1,1,1,1]
+xe6=[2,2,2,2,1,1,1,0,1,1]
+xe7=[0,0,0,0,0,1,1,1,1,1]
+xe8=[1,0,0,0,0,1,1,1,0,1]
+xe9=[1,-2,-2,-3,-1,0,1,1,0,1];
+xe10=[0,0,0,1,1,3,3,1,3,0]
+t=0;
+DF=0.7;
+a1=0;
+a2=0;
+a3=0;
+a4=0;
+a5=0;
+a6=0;
+a7=0;
+a8=0;
+a9=0;
+a10=0;
+b=[1,1,1];
+ye2=0;
+ye3=0;
+ye4=0;
+ye5=0;
+ye6=0;
+ye7=0;
+ye8=0;
+ye9=0;
+ye10=0;
+alpha=0.2;
+a=-5;
+b=5;
+u=0;
+while (t<1)
+ a1=trial(xe1);
+ a2=trial(xe2);
+ a3=trial(xe3);
+ a4=trial(xe4);
+ a5=trial(xe5);
+ a6=trial(xe6);
+ a7=trial(xe7);
+ a8=trial(xe8);
+ a9=trial(xe9);
+ a10=trial(xe10);
+ a10=trial(xe1);
+
+a=[trial(xe1),trial(xe2),trial(xe3),trial(xe4),trial(xe5),trial(xe6),trial(xe7),tri
+al(xe8),trial(xe9),trial(xe10)];
+ b1=sort(a);
+ if (b1(1)==a1)
+ ye1=xe1;
+ elseif (b1(1)==a2)
+ ye1=xe2;
+ elseif (b1(1)==a3)
+ ye1=xe3;
+ elseif (b1(1)==a4)
+ ye1=xe4;
+ elseif (b1(1)==a5)
+ ye1=xe5;
+ elseif (b1(1)==a6)
+ ye1=xe6;
+ elseif (b1(1)==a7)
+ ye1=xe7;
+ elseif (b1(1)==a8)
+ ye1=xe8;
+ elseif (b1(1)==a9)
+ ye1=xe9;
+ elseif (b1(1)==a10)
+ ye10=xe10;
+
+ end
+ if (b1(2)==a1)
+ ye2=xe1;
+ elseif (b1(2)==a2)
+ ye2=xe2;
+ elseif (b1(2)==a3)
+ ye2=xe3;
+ elseif (b1(2)==a4)
+ ye2=xe4;
+ elseif (b1(2)==a5)
+ ye2=xe5;
+ elseif (b1(2)==a6)
+ ye2=xe6;
+ elseif (b1(2)==a7)
+ ye2=xe7;
+ elseif (b1(2)==a8)
+ ye2=xe8;
+ elseif (b1(2)==a9)
+ ye2=xe9;
+ elseif (b1(2)==a10)
+ ye2=xe10;
+
+ end
+ if (b1(3)==a1)
+ ye3=xe1;
+ elseif (b1(3)==a2)
+ ye3=xe2;
+ elseif (b1(3)==a3)
+ ye3=xe3;
+ elseif (b1(3)==a4)
+ ye3=xe4;
+ elseif (b1(3)==a5)
+ ye3=xe5;
+ elseif (b1(3)==a6)
+ ye3=xe6;
+ elseif (b1(3)==a7)
+ ye3=xe7;
+ elseif (b1(3)==a8)
+ ye3=xe8;
+ elseif (b1(3)==a9)
+ ye3=xe9;
+ elseif (b1(3)==a10)
+ ye3=xe10;
+
+ end
+ if (b1(4)==a1)
+ ye4=xe1;
+ elseif (b1(4)==a2)
+ ye4=xe2;
+ elseif (b1(4)==a3)
+ ye4=xe3;
+ elseif (b1(4)==a4)
+ ye4=xe4;
+ elseif (b1(4)==a5)
+ ye4=xe5;
+ elseif (b1(4)==a6)
+ ye4=xe6;
+ elseif (b1(4)==a7)
+ ye4=xe7;
+ elseif (b1(4)==a8)
+ ye4=xe8;
+ elseif (b1(4)==a9)
+ ye4=xe9;
+ elseif (b1(4)==a10)
+ ye4=xe10;
+
+ end
+ if (b1(5)==a1)
+ ye5=xe1;
+ elseif (b1(5)==a2)
+ ye5=xe2;
+ elseif (b1(5)==a3)
+ ye5=xe3;
+ elseif (b1(5)==a4)
+ ye5=xe4;
+ elseif (b1(5)==a5)
+ ye5=xe5;
+ elseif (b1(5)==a6)
+ ye5=xe6;
+ elseif (b1(5)==a7)
+ ye5=xe7;
+ elseif (b1(5)==a8)
+ ye5=xe8;
+ elseif (b1(5)==a9)
+ ye5=xe9;
+ elseif (b1(5)==a10)
+ ye5=xe10;
+
+ end
+ %Generate five children using 2 parents via box crossover%
+ ye11=min(ye1) +alpha*abs(ye1)
+ ye12=min(ye2) +alpha*abs(ye2)
+ ye13=min(ye3) +alpha*abs(ye3)
+ ye14=min(ye4) +alpha*abs(ye4)
+ ye15=min(ye5) +alpha*abs(ye5)
+ %Mutation (1/5)%
+ f1=randn
+ if (f1<0.8)
+ u=u+1;
+ ye11=ye11+ norm(DF);
+ else
+ ye11=ye11;
+ end
+ f2=randn;
+ if (f2<0.8)
+ u=u+1;
+ ye12=ye12 +norm(DF)
+ else
+ ye12=ye12;
+ end
+ f3=randn;
+ if (f3<0.8)
+ u=u+1;
+ ye13=ye13+ norm(DF);
+ else
+ ye13=ye13;
+ end
+ f4=randn;
+ if (f4<0.8)
+ u=u+1;
+ ye14=ye14+norm(DF);
+ end
+ f5=randn;
+ if (f5<0.8)
+ u=u+1;
+ ye15=ye15+norm(DF);
+ else
+ ye15=ye15;
+ end
+ f6=randn;
+ if (f6<0.8)
+ u=u+1;
+ ye1=ye1+norm(DF);
+ else
+ ye1=ye1;
+ end
+ f7=randn;
+ if (f7<0.8)
+ u=u+1;
+ ye2=ye2+norm(DF);
+ else
+ ye2=ye2;
+ end
+ f8=randn;
+ if (f8<0.8)
+ u=u+1;
+ ye3=ye3+norm(DF);
+ else
+ ye3=ye3;
+ end
+ f9=randn;
+ if (f9<0.8)
+ u=u+1;
+ ye4=ye4+norm(DF);
+ else
+ ye4=ye4;
+ end
+ f10=randn;
+ if (f10<0.8)
+ u=u+1;
+ ye5=ye5+norm(DF);
+ else
+ ye5=ye5;
+ end
+ %Toroidal handling of the bounds%
+ %handling for 5 children%
+ if (min(ye11)<a)
+ ye11=ye11+(b)-(a);
+ elseif (max(ye11)>b)
+ ye11=ye11+abs(a)-abs(b);
+ end
+
+ if (min(ye12)<a)
+ ye12=ye12+(b)-(a);
+ elseif (max(ye12)>b)
+ ye12=ye12+abs(a)-abs(b);
+ end
+ if (min(ye13)<a)
+ ye13=ye13+(b)-(a);
+ elseif (max(ye13)>b)
+ ye13=ye13+abs(a)-abs(b);
+ end
+ if (min(ye14)<a)
+ ye14=ye14+(b)-(a);
+ elseif (max(ye14)>b)
+ ye14=ye14+abs(a)-abs(b);
+ end
+ if (min(ye15)<a)
+ ye15=ye15+(b)-(a);
+ elseif (max(ye15)>b)
+ ye15=ye15+ans(a)-abs(b);
+ end
+ %Toroidal handling for 5 initial parents, the top 5 of the original,
+ %initial population%
+ if (min(ye1)<a)
+ ye1=ye1+b-a;
+ elseif (max(ye1)>b)
+ ye1=ye1+abs(a)-abs(b);
+ end
+ if (min(ye2)<a)
+ ye2=ye2+(b)-(a);
+ elseif (max(ye2)>b)
+ ye2=ye2+abs(a)-abs(b);
+ end
+ if (min(ye3)<a)
+ ye3=ye3+(b)-(a);
+ elseif (max(ye3)>b)
+ ye3=ye3+abs(a)-abs(b);
+ end
+ if (min(ye4)<a)
+ ye4=ye4+(b)-(a);
+ elseif (max(ye4)>b)
+ ye4=ye4+abs(a)-abs(b);
+ end
+
+ if (min(ye5)<a)
+ ye5=ye5+(b)-(a);
+ elseif (max(ye5)>b)
+ ye5=ye5+abs(a)-abs(b);
+ end
+ %Selection of new population from the 5 generated children and the five
+ %original parents for fitness evaluation%
+ xe1=ye1;
+ xe2=ye2;
+ xe3=ye3;
+ xe4=ye4;
+ xe5=ye5;
+ xe6=ye11;
+ xe7=ye12;
+ xe8=ye13;
+ xe9=ye14;
+ xe10=ye15;
+ if ((u/10)<0.25)
+ DF=DF*0.8
+ elseif((u/10)==0.25)
+ DF=DF;
+ elseif((u/10)>0.25)
+ DF=DF/0.8;
+ end
