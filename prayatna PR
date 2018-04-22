@@ -1,0 +1,47 @@
+#include <iostream>
+#include<vector>
+#include <string.h>
+
+using namespace std;
+void dfs(vector<vector<int> &v,bool arr[], int node){
+	arr[node]=true;
+	for(int i=0;i<v[node].size();++i){
+		int a=arr[node][i];
+		if (!arr[a])
+		dfs(v,arr,a);
+	}
+	
+}
+
+int main() {
+	// your code goes here
+	int Q;
+	vector <vector<int> > vec(100000);
+	
+	cin>>Q;
+	while (Q--){
+		int friends,e;
+		cin>>friends>>e;
+		for (int i=0;i<e;++i){
+			int c,d;
+			cin >> c >> d;
+			vec[c].push_back(d);
+			vec[d].push_back(c);
+			
+			
+		}
+		bool visited[100000];
+		memset(visited,false,sizeof(false));
+		
+		int temp=0;
+		for (int y=0;y<friends-1;++y)
+		if (!visited[y]){
+		dfs(vec,visited,y);
+		temp++;
+		}
+		
+		cout<<temp<<endl;
+		
+	}
+	return 0;
+}
