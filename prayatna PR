@@ -3,10 +3,10 @@
 #include <string.h>
 
 using namespace std;
-void dfs(vector<vector<int> &v,bool arr[], int node){
+void dfs(vector<vector<int> > &v,bool arr[], int node){
 	arr[node]=true;
 	for(int i=0;i<v[node].size();++i){
-		int a=arr[node][i];
+		int a=v[node][i];
 		if (!arr[a])
 		dfs(v,arr,a);
 	}
